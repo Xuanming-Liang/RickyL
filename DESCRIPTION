@@ -1,6 +1,6 @@
 Package: Ricky_L
 Title: Name of preset palette in ggplot2 
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: 
     person(given = "Xuanming",
            family = "Liang",
