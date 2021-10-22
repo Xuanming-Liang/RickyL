@@ -11,7 +11,7 @@
 #' \item{primary}{The primary colour}
 #' \item{other}{The other colour}
 #
-#'
+#'}
 #' @examples
 #' # plot with discrete scale gg + scale_colour_ricky_d()
 scale_colour_ricky_d <- function(direction = 1, primary = "yellow",
@@ -31,7 +31,7 @@ scale_colour_ricky_d <- function(direction = 1, primary = "yellow",
 #' \item{primary}{The primary colour}
 #' \item{other}{The other colour}
 #
-#'
+#'}
 #' @examples
 #' # plot with discrete scale gg + scale_fill_ricky_d()
 scale_fill_ricky_d <- function(direction = 1, primary = "blue",

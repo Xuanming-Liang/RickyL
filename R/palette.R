@@ -20,7 +20,7 @@ ricky_colours <- list(
 #' \item{direction}{= 1 is preface the palette colour, = -1 is reverse order the palette colour}
 #' \item{n}{The number of colour select}
 #
-#'
+#'}
 #' @examples
 #' # ricky_palette(direction = 1)(2)
 ricky_palette <- function(
