@@ -1,7 +1,7 @@
 library(testthat)
-library(Ricky_L)
+library(RickyL)
 
-test_check("Ricky_L")
+#test_check("RickyL")
 
 test_that("palette", {
   expect_equal(length(ricky_colours),7)
