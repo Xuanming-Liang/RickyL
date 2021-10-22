@@ -1,19 +1,24 @@
-# This is where functions for your continous scale go
 
-scale_colour_NAME_seq_c <- function(name, direction = 1, amount = 0.2, ...) {
-  # check that name is in your palette
-  # throw an error if it isn't
 
-  # set the low colour
+scale_colour_ricky_seq_c <- function(name, direction = 1, amount = 0.2, ...) {
+  if(!name %in% names(ricky_colours)) stop ("This colour not in the package.")
 
-  # set the high colour with colorspace pkg
+  if(name %in% names(ricky_colours)){
+    if(direction >= 0){
+     low <- colorspace::lighten(ricky_colours[name],0)
+     high <- colorspace::lighten(ricky_colours[name],amount)
+   }
+    else {
+      high <- colorspace::lighten(ricky_colours[name],0)
+      low <- colorspace::lighten(ricky_colours[name],amount)
+  }
 
-  # if direction is < 0 switch high and low
-
-  # pass everything on to ggplot2 color gradient
-
+}
   ggplot2::scale_color_gradient(
+    low = low,
+    high = high,
     ...
   )
 
 }
+

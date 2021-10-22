@@ -1,20 +1,40 @@
 # Define colour palette variables and functions here
 
-NAME_colours <- list(
-  # add your colours as a named list here, i.e.
-  "pink" = "#ea5f94"
+ricky_colours <- list(
+  "pink" = "#ff7aa2",
+  "blue" = "#07a0c3",
+  "red"  = "#ea3546",
+  "yellow" = "#FAFA61",
+  "green"  = "#80ed99",
+  "navy"   = "#2e4057",
+  "grey"   = "#e0e0e2"
 )
 
 
-NAME_palette <- function(direction = 1) {
-  # the palette function returns a function,
-  # so it would be called like NAME_palette()(2) to generate
-  # your palette with two colours
-  function(n) {
-    # a warning or an error should be presented if n is larger
-    # the length of NAME_colours
+ricky_palette <- function(
+  primary = "yellow",
+  other = "blue",
+  direction = 1) {
+  stopifnot(primary %in% names(ricky_colours))
 
-    # if direction is less than 1 reverse the ordering of the
-    # palette
+  function(n) {
+    if (n > 7) warning("Ricky Colour Palette only has 7 colors.")
+
+    if (n < 1) warning("You must select at least 1 colour.")
+
+    if (n == 2) {
+      other <- if (!other %in% names(ricky_colours)) {
+        other
+      } else {
+        ricky_colours[other]
+      }
+      colour_list <- c(other, ricky_colours[primary])
+    } else {
+      colour_list <- ricky_colours[1:n]
+    }
+
+    colour_list <- unname(unlist(colour_list))
+    if (direction >= 0) colour_list else rev(colour_list)
   }
 }
+

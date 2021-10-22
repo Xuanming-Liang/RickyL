@@ -1,13 +1,17 @@
-# This is where your discrete ggplot palettes would go
 
-scale_colour_NAME_d <- function(direction = 1, ...) {
-  ggplot2::discrete_scale(
+
+scale_colour_ricky_d <- function(direction = 1, primary = "yellow",
+                                other = "green",...) {
+  ggplot2::discrete_scale( "colour", "ricky",
+                           ricky_palette(primary, other, direction),
     ...
   )
 }
 
-scale_fill_NAME_d <- function(direction = 1, ...) {
-  ggplot2::discrete_scale(
+scale_fill_ricky_d <- function(direction = 1, primary = "blue",
+                               other = "green",...) {
+  ggplot2::discrete_scale( "fill", "ricky",
+                           ricky_palette(primary, other, direction),
     ...
   )
 }
