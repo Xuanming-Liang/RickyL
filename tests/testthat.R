@@ -1,5 +1,5 @@
 library(testthat)
-library(RickyL)
+#library(RickyL)
 
 #test_check("RickyL")
 
